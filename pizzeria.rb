@@ -25,3 +25,24 @@ def take_order
   count = gets.chomp
   puts "ok, so that's #{count} pizza's of number #{number} for you"
 end
+
+def total_amount(menu_nr, pizza_cnt)
+  price = 0
+  price = @pizza_salami if menu_nr == '1'
+  price = @pizza_quattro_stagioni if menu_nr == '2'
+  price = @pizza_ham_cheese if menu_nr == '3'
+  price = @pizza_shoarma if menu_nr == '4'
+
+  amount = price * pizza_cnt
+
+  if amount > 20 then
+    # Discount of 10% if over 20 Euro
+    amount *= 0.9
+  end
+  if amount < 10 && amount > 0 then
+    # Add delivery costs
+    amount += 2.5
+  end
+
+  return amount
+end
