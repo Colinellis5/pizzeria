@@ -16,3 +16,12 @@ def show_menu
   puts "3 - Ham / Cheese - #{@pizza_ham_cheese} Euro"
   puts "4 - Shoarma - #{@pizza_shoarma} Euro"
 end
+
+def take_order
+  puts "let's take your order"
+  show_menu
+  number = gets.chomp
+  puts "how many would you like?"
+  count = gets.chomp
+  puts "ok, so that's #{count} pizza's of number #{number} for you"
+end
